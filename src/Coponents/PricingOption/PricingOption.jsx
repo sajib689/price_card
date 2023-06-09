@@ -3,6 +3,9 @@ import Feature from '../Feature/Feature';
 
 const PricingOption = ({option}) => {
     const {features} = option
+    const buyNow = id => {
+        console.log('id')
+    }
     return (
         <div className='mt-12 bg-indigo-300 m-3 rounded-md p-3 text-center'>
             <div>
@@ -14,7 +17,7 @@ const PricingOption = ({option}) => {
             {
                 features.map((feature, idx) => <Feature key={idx} feature={feature}></Feature>)
             }
-            <button className='bg-green-500 w-full rounded-md py-2 font-bold text-white mt-4'>Buy Now</button>
+            <button onClick={() => buyNow} className='bg-green-500 w-full rounded-md py-2 font-bold text-white mt-4'>Buy Now</button>
         </div>
     );
 };
